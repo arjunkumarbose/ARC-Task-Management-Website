@@ -1,3 +1,9 @@
 
 Client/.env
 .DS_Store
+*.cache
+Client/.firebaserc
+Client/firebase.json
+Server/package-lock.json
+*.json
+Server/package.json
