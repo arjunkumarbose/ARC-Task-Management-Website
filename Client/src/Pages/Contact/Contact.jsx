@@ -232,7 +232,7 @@ const Contact = () => {
                   marginheight="0"
                   marginwidth="0"
                   scrolling="no"
-                  src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=%C4%B0zmir+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d233668.0639664201!2d90.2548779793127!3d23.780753032099057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b087026b81%3A0x8fa563bbdd5904c2!2sDhaka!5e0!3m2!1sen!2sbd!4v1703251324978!5m2!1sen!2sbd"
                 ></iframe>
               </div>
             </div>
