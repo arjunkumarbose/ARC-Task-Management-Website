@@ -10,31 +10,31 @@ const Footer = () => {
 
         <div className="flex flex-wrap items-center justify-center gap-4 mt-6 lg:gap-6 lg:mt-0">
           <a
-            href="#"
+            href="https://www.linkedin.com/in/arjunkumarbose/"
             className="text-sm text-gray-600 transition-colors duration-300  hover:text-blue-500 "
           >
             LinkedIn
           </a>
 
           <a
-            href="#"
+            href="https://github.com/arjunkumarbose"
             className="text-sm text-gray-600 transition-colors duration-300  hover:text-blue-500 "
           >
-            Features
+            GitHub
           </a>
 
           <a
-            href="#"
+            href="/about"
             className="text-sm text-gray-600 transition-colors duration-300  hover:text-blue-500 "
           >
-            Pricing
+            About
           </a>
 
           <a
-            href="#"
+            href="/contact"
             className="text-sm text-gray-600 transition-colors duration-300  hover:text-blue-500 "
           >
-            Privacy
+            Contact
           </a>
         </div>
 
