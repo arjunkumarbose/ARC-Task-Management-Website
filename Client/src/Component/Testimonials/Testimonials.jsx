@@ -73,7 +73,7 @@ const Testimonials = () => {
               </svg>
             </div>
             <span className="w-12 h-1 my-2 rounded-lg dark:bg-violet-400"></span>
-            <p>Leroy Jenkins</p>
+            <p>Thomas Ronin</p>
           </div>
         </div>
       </section>
