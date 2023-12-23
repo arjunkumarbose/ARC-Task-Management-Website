@@ -17,8 +17,8 @@ const Login = () => {
     login(email, password)
       .then(() => {
         navigate("/");
-        toast("Log In Sucessfully", {
-          icon: "👏",
+        toast("Logged in sucessfully!", {
+          icon: "✅",
           style: {
             background: "#333",
             color: "#fff",
@@ -32,27 +32,23 @@ const Login = () => {
 
   return (
     <div>
-      <Navbar />
-      <div className="container mx-auto px-5 my-7 flex items-center justify-center lg:flex-row flex-col gap-8">
-        <div className="">
-          {/* <h1 className="text-5xl font-semibold ">
-          Hey there! <br /> Welcome back
-        </h1> */}
-          {/* <img className="lg:h-[400px]" src={image} alt="" /> */}
-        </div>
-        <div className="flex-1 max-w-sm bg-[#f0eded] px-7 py-6 rounded-lg">
-          <h1 className="text-3xl font-bold mb-5">Sign In</h1>
+      <div className="container mx-auto">
+        <Navbar />
+      </div>
+      <div className=" my-7 flex items-center justify-center lg:flex-row flex-col gap-8">
+        <div className="flex-1 max-w-sm bg-slate-200 p-14 rounded-lg ">
+          <h1 className="text-3xl font-bold mb-5 text-center">Sign In</h1>
           <form onSubmit={handleLogin}>
             <label className="font-bold " htmlFor="email">
-              Your Email
+              Email
             </label>{" "}
             <br />
             <input
               type="email"
               required
               name="email"
-              className="py-2 px-3 mb-3 mt-1 w-full rounded-sm"
-              placeholder="Enter email here..."
+              className="py-3 px-3 mb-3 mt-1 w-full rounded-lg"
+              placeholder="john@gmail.com"
             />
             <label className="font-bold " htmlFor="email">
               Password
@@ -62,20 +58,22 @@ const Login = () => {
               type="password"
               name="password"
               required
-              className="py-2 px-3 mt-1 w-full rounded-sm"
-              placeholder="Enter Password here..."
+              className="py-3 px-3 mt-1 w-full rounded-lg"
+              placeholder="Password..."
             />
-            <input
-              type="submit"
-              value="Sign In"
-              className="w-full py-3 rounded bg-green-600 font-medium mt-5 text-white cursor-pointer text-lg"
-            />
+            <div className="flex justify-center">
+              <input
+                type="submit"
+                value="Sign In"
+                className="px-14 py-2 rounded-lg bg-green-400 font-medium mt-5 text-black cursor-pointer text-lg"
+              />
+            </div>
           </form>
           <p className="my-2 text-center font-medium">or</p>
           <SocialLogin />
           <p className="font-bold mt-2 text-center">
             Dont have any Account?
-            <Link to="/register" className="pl-2 text-red-600">
+            <Link to="/register" className="pl-2 text-red-400">
               Register
             </Link>
           </p>

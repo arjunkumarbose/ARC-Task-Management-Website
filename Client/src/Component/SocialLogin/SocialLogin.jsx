@@ -16,7 +16,7 @@ const SocialLogin = () => {
     google()
       .then((res) => {
         navigate("/");
-        toast("Log In Sucessfully", {
+        toast("Login was successful!", {
           icon: "👏",
           style: {
             background: "#333",
@@ -53,15 +53,17 @@ const SocialLogin = () => {
   }, []);
 
   return (
-    <button
-      onClick={handleGoogle}
-      className="w-full flex items-center justify-center gap-2 py-2 rounded border-black border font-medium cursor-pointer text-lg"
-    >
-      <p className="text-xl">
-        <FcGoogle />
-      </p>
-      <p>Sign in with Google</p>
-    </button>
+    <div className="flex justify-center text-center items-center">
+      <button
+        onClick={handleGoogle}
+        className="px-10 flex items-center justify-center gap-2 py-2 rounded font-medium cursor-pointer text-lg"
+      >
+        <p className="text-xl">
+          <FcGoogle />
+        </p>
+        <p>Sign in with Google</p>
+      </button>
+    </div>
   );
 };
 

@@ -8,7 +8,7 @@ const port = process.env.PORT || 5001
 app.use(cors())
 app.use(express.json())
 
-const uri = `mongodb+srv://${process.env.USER_DB}:${process.env.USER_PASS}@cluster0.merbl3v.mongodb.net/?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.merbl3v.mongodb.net/?retryWrites=true&w=majority`;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -48,35 +48,25 @@ async function run() {
       res.send(result)
     })
 
-    app.put('/alltask/:id',async(req,res)=>{
-      const id = req.params.id;
-      const filter = {_id: new ObjectId(id)}
-      const options = { upsert: true };
-      const status = req.body.status;
-      const updatedDoc = {
-        $set:{
-          status: status
-        }
-      }
-      const result = await taskColluction.updateOne(filter,updatedDoc,options)
-      res.send(result)
-    })
 
-
-    //update task
     app.put('/alltask/:id', async (req, res) => {
       const id = req.params.id;
+      console.log('Task ID:', id); // Check if the ID is correctly received
+    
       const filter = { _id: new ObjectId(id) };
       const updatedTask = req.body; // Contains updated task details
+      console.log('Updated Task:', updatedTask); // Check if the updated task data is received
     
       try {
         const result = await taskColluction.updateOne(filter, { $set: updatedTask });
+        console.log('Update Result:', result); // Check the result from the update operation
         res.send(result);
       } catch (err) {
+        console.error('Update Error:', err); // Log any error that occurs during the update
         res.status(500).send(err);
       }
     });
-
+    
 
     app.delete('/alltask/:id',async(req,res)=>{
       const id = req.params.id;

@@ -8,14 +8,30 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logout().then(() => {
-      toast("Log Out Successfully", {
-        icon: "👏",
+      toast("Logged out Successfully!", {
+        icon: "❎",
         style: {
           background: "#333",
           color: "#fff",
         },
       });
     });
+  };
+
+  const renderUserDetails = () => {
+    if (user) {
+      return (
+        <div className="flex items-center space-x-2">
+          <img
+            src={user.photoURL}
+            alt="User"
+            className="w-8 h-8 rounded-full border-2 border-white"
+          />
+          <span>{user.displayName}</span>
+        </div>
+      );
+    }
+    return null;
   };
 
   const links = (
@@ -77,6 +93,7 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
+        <div className="mr-4">{renderUserDetails()}</div>
         {user ? (
           <button onClick={handleLogout} className="btn btn-outline">
             Logout

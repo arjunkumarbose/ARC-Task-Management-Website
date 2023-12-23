@@ -11,8 +11,8 @@ const Sidebar = () => {
   const handleLogout = () => {
     logout().then(() => {
       navigate("/");
-      toast("Log Out Sucessfully", {
-        icon: "👏",
+      toast("Logged out Sucessfully!", {
+        icon: "❎",
         style: {
           background: "#333",
           color: "#fff",
@@ -28,7 +28,7 @@ const Sidebar = () => {
           {/* Page content here */}
           <label
             htmlFor="my-drawer-2"
-            className="text-2xl cursor-pointer bg-gray-800 p-4 text-white drawer-button lg:hidden"
+            className="text-2xl cursor-pointer bg-slate-200 p-4 text-black drawer-button lg:hidden"
           >
             <MdMenu />
           </label>
@@ -40,56 +40,54 @@ const Sidebar = () => {
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          <ul className="menu p-4 w-60 min-h-full flex flex-col justify-between bg-gray-800 text-white">
+          <ul className="menu p-4 w-60 min-h-full flex flex-col justify-between bg-slate-200 text-black">
             <div>
               <div className="flex gap-2 items-center">
                 <img
-                  className="w-12 h-12 rounded-full border-2 border-white my-5"
+                  className="w-10 h-10 rounded-full border-2 border-white my-5"
                   src={user.photoURL}
                   alt=""
                 />
-                <h1 className="text-[20px] font-semibold uppercase">
-                  {user?.displayName}
-                </h1>
+                <h1 className="text-ld font-bold ">{user?.displayName}</h1>
               </div>
               {/* Sidebar content here */}
-              <li className="hover:bg-[#374151] mt-2">
+              <li className="hover:bg-blue-400 mt-2 text-md rounded-lg shadow-md">
                 <NavLink
                   to="/"
                   className={({ isActive, isPending }) =>
                     isPending
                       ? "pending"
                       : isActive
-                      ? "bg-[#374151] rounded-none"
-                      : "text-lg"
+                      ? "bg-blue-400 rounded-lg shadow-md font-bold"
+                      : "text-md"
                   }
                 >
                   Home
                 </NavLink>
               </li>
-              <li className="hover:bg-[#374151] mt-2">
+              <li className="hover:bg-blue-400 mt-2 text-md rounded-lg shadow-md">
                 <NavLink
                   to="/dashboard"
                   className={({ isActive, isPending }) =>
                     isPending
                       ? "pending"
                       : isActive
-                      ? "bg-[#374151] rounded-none"
-                      : "text-lg"
+                      ? "bg-blue-400 rounded-lg shadow-md font-bold"
+                      : "text-md"
                   }
                 >
                   Dashboard
                 </NavLink>
               </li>
             </div>
-            <li onClick={handleLogout} className=" bg-gray-600 ">
+            {/* <li onClick={handleLogout} className=" bg-gray-600 ">
               <div className="flex gap-2 items-center">
                 <span className="text-xl">
                   <IoSettingsOutline />
                 </span>
-                <span className="text-lg">Log Out</span>
+                <span className="text-md">Log Out</span>
               </div>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>

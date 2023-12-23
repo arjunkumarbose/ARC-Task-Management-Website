@@ -11,7 +11,10 @@ const Banner = () => {
             <div className="relative inline-flex items-center mx-auto align-middle">
               <div className="pb-12 text-center">
                 <h1 className="max-w-5xl text-2xl font-bold leading-none tracking-tighter text-neutral-600 md:text-5xl lg:text-6xl lg:max-w-7xl">
-                  Your all in one <br className="hidden lg:block" />
+                  Your all in one
+                  <br className="hidden lg:block" />
+                  <span className="text-blue-400">ARC</span>
+                  <br className="hidden lg:block" />
                   Task Management Tool!
                 </h1>
 
@@ -19,13 +22,13 @@ const Banner = () => {
                   <div className="sm:max-w-lg sm:flex md:mx-auto mt-8">
                     {user ? (
                       <Link to="/dashboard">
-                        <button className="mt-3 bg-blue-400 w-96 text-white px-5 py-3 rounded-md font-medium">
+                        <button className="mt-3 bg-blue-500 font-bold w-96 text-white px-5 py-3 rounded-md ">
                           Let’s Explore
                         </button>
                       </Link>
                     ) : (
                       <Link to="/login">
-                        <button className="mt-3 bg-blue-400 w-96 text-white px-5 py-3 rounded-md font-medium">
+                        <button className="mt-3 bg-blue-500 font-bold w-96 text-white px-5 py-3 rounded-md ">
                           Let’s Explore
                         </button>
                       </Link>
